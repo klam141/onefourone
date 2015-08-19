@@ -1,0 +1,17 @@
+{
+  "name": "onefourone",
+  "version": "0.1.0",
+  "description": "onefour.one",
+  "author": "David Gosma <davidgosma@gmail.com>",
+  "scripts": {
+    "start": "node onefourone.js"
+  },
+  "main": "onefourone.js",
+  "dependencies": {
+    "ejs": "^2.2.3",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.11.1"
+  },
+  "devDependencies": {},
+  "license": "ISC"
+}
