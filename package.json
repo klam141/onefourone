@@ -1,12 +1,15 @@
 {
   "name": "onefourone",
   "version": "0.1.0",
-  "description": "onefour.one",
+  "description": "My personal website/blog.",
   "author": "David Gosma <davidgosma@gmail.com>",
   "scripts": {
     "start": "node onefourone.js"
   },
-  "main": "onefourone.js",
+  "repository": {
+	"type": "git",
+	"url": "https://github.com/klam141/onefourone"
+  },
   "dependencies": {
     "ejs": "^2.2.3",
     "ejs-locals": "^1.0.2",
