@@ -14,14 +14,15 @@ var sys 		= require('sys'),
 	fs 			= require('fs'),
 	express 	= require('express'),
 	engine 		= require('ejs-locals'),
+	bodyParser	= require('body-parser'),
 	server 		= express();
 	
 	
 var mysql 		= require('mysql'),
 	connection	= mysql.createConnection({
 		host		: 'localhost',
-		user		: 'me',
-		password	: 'bluh',
+		user		: 'root',
+		password	: '',
 		database	: 'posts'
 });
 
@@ -38,6 +39,8 @@ connection.connect(function(err) {
 	console.log('connected as ' + connection.threadId);
 });
 
+connection.end();
+
 server.use(function(req, res, next) {
 	console.log(req.url);
 	next();
@@ -47,6 +50,15 @@ server.get('/',  function(req, res) {
 	res.render('index', {title: 'Home'});
 });
 
+var jsonParser = bodyParser.json();
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+server.post('/', urlencodedParser, function(req, res){
+	if(!req.body) return res.sendStatus(400);
+    console.log('Submission Recieved');
+	
+
+});
+  
 /*		404		*/
 server.use(function(req, res) {
 	res.render('404');

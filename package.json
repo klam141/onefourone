@@ -7,13 +7,15 @@
     "start": "node onefourone.js"
   },
   "repository": {
-	"type": "git",
-	"url": "https://github.com/klam141/onefourone"
+    "type": "git",
+    "url": "https://github.com/klam141/onefourone"
   },
   "dependencies": {
+    "body-parser": "^1.13.3",
     "ejs": "^2.2.3",
     "ejs-locals": "^1.0.2",
-    "express": "^4.11.1"
+    "express": "^4.11.1",
+    "mysql": "^2.8.0"
   },
   "devDependencies": {},
   "license": "ISC"
