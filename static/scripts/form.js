@@ -1,5 +1,5 @@
 function validate() {
-var form = document.getElementById('form1');
+	var form = document.getElementById('form1');
 	
 	var valid = 0
 	
