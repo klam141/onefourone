@@ -2,9 +2,9 @@
 		11   44   44    11
 		11   44   44    11
 		11   4444444    11
-		11		  44    11	David Gosma
-		11		  44    11	davidgosma@gmail.com
-		11		  44    11	onefour.one
+		11        44    11	David Gosma
+		11        44    11	davidgosma@gmail.com
+		11        44    11	onefour.one
 */
 
 var sys 		= require('sys'),
