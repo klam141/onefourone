@@ -7,7 +7,7 @@
 		11        44    11	onefour.one
 */
 
-var sys 		= require('sys'),
+var sys 		= require('util'),
 	my_http 	= require('http'),
 	path 		= require('path'),
 	url 		= require('url'),
@@ -17,7 +17,7 @@ var sys 		= require('sys'),
 	bodyParser	= require('body-parser'),
 	server 		= express();
 	
-	
+/*	
 var mysql 		= require('mysql'),
 	connection	= mysql.createConnection({
 		host		: 'localhost',
@@ -25,12 +25,13 @@ var mysql 		= require('mysql'),
 		password	: '',
 		database	: 'posts'
 });
-
+*/
 	
 server.set('view engine', 'ejs');
 server.engine('ejs', engine);
 server.use(express.static('./static'));
 
+/*
 connection.connect(function(err) {
 	if(err) {
 		console.error('error connecting: ' + err.stack)
@@ -40,6 +41,7 @@ connection.connect(function(err) {
 });
 
 connection.end();
+*/
 
 server.use(function(req, res, next) {
 	console.log(req.url);
