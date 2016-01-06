@@ -8,7 +8,8 @@
 */
 
 var sys 		= require('util'),
-	http 	= require('http'),
+	http 		= require('http'),
+	port 		= process.env.port || 8080
 	path 		= require('path'),
 	url 		= require('url'),
 	fs 			= require('fs'),
@@ -74,6 +75,6 @@ server.use(function(req, res) {
 	res.end();
 })
 
-server.listen(8080, function() {
+server.listen(port, function() {
 	console.log('Server listening on port 8080');
 });
