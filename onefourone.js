@@ -8,7 +8,7 @@
 */
 
 var sys 		= require('util'),
-	my_http 	= require('http'),
+	http 	= require('http'),
 	path 		= require('path'),
 	url 		= require('url'),
 	fs 			= require('fs'),
@@ -42,6 +42,13 @@ connection.connect(function(err) {
 
 connection.end();
 */
+
+http.get('http://www.onefour.one/', function(res) {
+	console.log(res.statusCode);
+	res.on('error', function(error) {
+		console.log(error);
+	});
+});
 
 server.use(function(req, res, next) {
 	console.log(req.url);
