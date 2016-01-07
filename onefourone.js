@@ -16,9 +16,9 @@ var sys 		= require('util'),
 	express 	= require('express'),
 	engine 		= require('ejs-locals'),
 	bodyParser	= require('body-parser'),
+	fetcher		= require('./fetcher/fetcher'),
 	server 		= express();
 	
-/*	
 var mysql 		= require('mysql'),
 	connection	= mysql.createConnection({
 		host		: 'localhost',
@@ -26,23 +26,10 @@ var mysql 		= require('mysql'),
 		password	: '',
 		database	: 'posts'
 });
-*/
 	
 server.set('view engine', 'ejs');
 server.engine('ejs', engine);
 server.use(express.static('./static'));
-
-/*
-connection.connect(function(err) {
-	if(err) {
-		console.error('error connecting: ' + err.stack)
-		return;
-	}
-	console.log('connected as ' + connection.threadId);
-});
-
-connection.end();
-*/
 
 http.get('http://www.onefour.one/', function(res) {
 	console.log(res.statusCode);
@@ -57,7 +44,7 @@ server.use(function(req, res, next) {
 });
 
 server.get('/',  function(req, res) {
-	res.render('index', {title: 'Home'});
+	res.render('index', {title: 'Home', posts: fetcher(connection, 5)});
 });
 
 var jsonParser = bodyParser.json();
@@ -65,8 +52,6 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 server.post('/', urlencodedParser, function(req, res){
 	if(!req.body) return res.sendStatus(400);
     console.log('Submission Recieved');
-	
-
 });
   
 /*		404		*/
